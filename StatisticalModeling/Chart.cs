@@ -68,7 +68,7 @@ namespace Practice
 
             var bitmap = new Bitmap(p.Width, p.Height);
             var g = Graphics.FromImage(bitmap);
-            var pen = new Pen(Color.Green, 2);
+            var pen = new Pen(Color.Blue, 2);
             var rand = new Random(launch);
 
             int[] x = new int[length], y = new int[length];

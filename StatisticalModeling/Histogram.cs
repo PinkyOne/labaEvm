@@ -66,7 +66,7 @@ namespace Practice
 
             var bitmap = new Bitmap(p.Width, p.Height);
             var g = Graphics.FromImage(bitmap);
-            var pen = new Pen(Color.Black, 1);
+            var pen = new Pen(Color.Blue, 1);
             var rand = new Random(launch);
 
             var left = 0;
@@ -101,7 +101,7 @@ namespace Practice
             for (var i = 0; i < countOfColumns; i++)
             {
                 var height = (int)Math.Round(histogram[i] * coeff);
-                g.FillRectangle(new SolidBrush(Color.Blue), new Rectangle(curLeft, chartY - height, columnWidth, height));
+                g.FillRectangle(new SolidBrush(Color.LightGray), new Rectangle(curLeft, chartY - height, columnWidth, height));
                 g.DrawRectangle(pen, new Rectangle(curLeft, chartY - height, columnWidth, height));
 
                 if (showTitles)
