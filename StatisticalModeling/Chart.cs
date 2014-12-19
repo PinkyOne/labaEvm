@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Practice
 {
-    public partial class Chart 
+    public partial class Chart
     {
         private static int launch; // AAA DON'T DELETE THIS HACK!!!
 
@@ -18,11 +18,17 @@ namespace Practice
 
         private double[] x;
 
+        private double[] y;
+
         private PictureBox p;
 
-        public Chart(double[] x, PictureBox p)
+        private PictureBox p2;
+
+        public Chart(double[] x, double[] y, PictureBox p, PictureBox p2)
         {
             this.p = p;
+            this.p2 = p2;
+            this.y = y;
             launch = new Random().Next();
             length = x.Length;
             this.x = x;
@@ -49,7 +55,7 @@ namespace Practice
 
             return normVec;
         }
-        
+
         public void DrawChart()
         {
             p.Controls.Clear();
@@ -80,13 +86,72 @@ namespace Practice
             pen.Color = mainColor;
             for (var i = 1; i < length; i++)
             {
-                try { g.DrawLine(pen, x[i - 1], y[i - 1], x[i], y[i]); }
-                catch { }
+                try
+                {
+                    g.DrawLine(pen, x[i - 1], y[i - 1], x[i], y[i]);
+                }
+                catch
+                {
+                }
             }
 
-            try { g.DrawLine(new Pen(Color.Black, 1), 0, chartY - curZero, p.Width, chartY - curZero); }
-            catch { }
+            try
+            {
+                g.DrawLine(new Pen(Color.Black, 1), 0, chartY - curZero, p.Width, chartY - curZero);
+            }
+            catch
+            {
+            }
             p.Image = bitmap;
+        }
+
+        public void DrawChart2()
+        {
+            p2.Controls.Clear();
+            int curZero;
+            var normX = GetNormalizedVector(this.y, p2.Height - 50, out curZero);
+            var lengthOfSegment = p2.Width * 1.0 / length;
+            double curLeft = 0;
+
+            var chartY = p.Height - 25;
+
+            var bitmap = new Bitmap(p2.Width, p2.Height);
+            var g = Graphics.FromImage(bitmap);
+            var pen = new Pen(Color.Green, 2);
+            var rand = new Random(launch);
+
+            int[] x = new int[length], y = new int[length];
+
+            for (var i = 0; i < length; i++)
+            {
+                var height = normX[i];
+                x[i] = (int)Math.Round(curLeft);
+                y[i] = chartY - height;
+                curLeft += lengthOfSegment;
+            }
+
+            // Gradient implementation
+            var mainColor = Color.Red;
+            pen.Color = mainColor;
+            for (var i = 1; i < length; i++)
+            {
+                try
+                {
+                    g.DrawLine(pen, x[i - 1], y[i - 1], x[i], y[i]);
+                }
+                catch
+                {
+                }
+            }
+
+            try
+            {
+                g.DrawLine(new Pen(Color.Black, 1), 0, chartY - curZero, p2.Width, chartY - curZero);
+            }
+            catch
+            {
+            }
+            p2.Image = bitmap;
         }
     }
 }

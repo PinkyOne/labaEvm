@@ -17,14 +17,16 @@ namespace Practice
             uint n;
             try
             {
-                n = 10/uint.Parse(textBox1.Text);
+                n = 10 / uint.Parse(textBox1.Text);
             }
             catch
             {
-                MessageBox.Show(Resources.MainForm_button1_Click_Некорректный_ввод_, Resources.MainForm_button1_Click_Ошибка);
+                MessageBox.Show(
+                    Resources.MainForm_button1_Click_Некорректный_ввод_,
+                    Resources.MainForm_button1_Click_Ошибка);
                 return;
             }
-            
+
             var random = new Random();
 
             var x0 = new double[2];
@@ -32,20 +34,27 @@ namespace Practice
 
             x0[0] = random.NextDouble() * 2 * Math.PI / n;
             y0[0] = random.NextDouble() * 2 * Math.PI / n;
-          
+
             y0[1] = random.NextGaussian() * 0.01 * n;
             x0[1] = random.NextGaussian() * 0.01 * n;
-          
+
             var sol1 = RungeKutta.Runge_Kutta(x0[1], y0[1], x0[0], 555, 15, 0, 10);
-          
+
             var vector = new double[100];
+            var vector2 = new double[100];
 
             for (var i = 0; i < 100; i++)
             {
                 vector[i] = sol1[i, 0];
+                vector2[i] = sol1[i, 1];
             }
-            ChartUtilities.DrawChart(vector, pictureBox2);
-            ChartUtilities.DrawHistogram(vector, 10,pictureBox1);
+            ChartUtilities.DrawChart(vector, vector2, pictureBox2, pictureBox3);
+            ChartUtilities.DrawHistogram(vector, vector2,10, pictureBox1, pictureBox4);
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

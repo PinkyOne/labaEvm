@@ -7,3 +7,12 @@ C:\Users\Alex\Desktop\Praktika-EVM-master\StatisticalModeling\StatisticalModelin
 C:\Users\Alex\Desktop\Praktika-EVM-master\StatisticalModeling\StatisticalModeling\obj\Debug\StatisticalModeling.csproj.GenerateResource.Cache
 C:\Users\Alex\Desktop\Praktika-EVM-master\StatisticalModeling\StatisticalModeling\obj\Debug\StatisticalModeling.exe
 C:\Users\Alex\Desktop\Praktika-EVM-master\StatisticalModeling\StatisticalModeling\obj\Debug\StatisticalModeling.pdb
+C:\Users\Alex\Documents\GitHub\labaEvm\StatisticalModeling\bin\Debug\StatisticalModeling.exe.config
+C:\Users\Alex\Documents\GitHub\labaEvm\StatisticalModeling\obj\Debug\StatisticalModeling.exe
+C:\Users\Alex\Documents\GitHub\labaEvm\StatisticalModeling\obj\Debug\StatisticalModeling.pdb
+C:\Users\Alex\Documents\GitHub\labaEvm\StatisticalModeling\bin\Debug\StatisticalModeling.exe
+C:\Users\Alex\Documents\GitHub\labaEvm\StatisticalModeling\bin\Debug\StatisticalModeling.pdb
+C:\Users\Alex\Documents\GitHub\labaEvm\StatisticalModeling\obj\Debug\StatisticalModeling.csprojResolveAssemblyReference.cache
+C:\Users\Alex\Documents\GitHub\labaEvm\StatisticalModeling\obj\Debug\Practice.MainForm.resources
+C:\Users\Alex\Documents\GitHub\labaEvm\StatisticalModeling\obj\Debug\Practice.Properties.Resources.resources
+C:\Users\Alex\Documents\GitHub\labaEvm\StatisticalModeling\obj\Debug\StatisticalModeling.csproj.GenerateResource.Cache
