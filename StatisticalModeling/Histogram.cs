@@ -121,7 +121,7 @@ namespace Practice
         }
         public void DrawChart2()
         {
-            p.Controls.Clear();
+            p2.Controls.Clear();
 
             Array.Sort(y);
             double minX = y[0], maxX = y[length - 1];

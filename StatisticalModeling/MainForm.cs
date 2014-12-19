@@ -49,7 +49,7 @@ namespace Practice
                 vector2[i] = sol1[i, 1];
             }
             ChartUtilities.DrawChart(vector, vector2, pictureBox2, pictureBox3);
-            ChartUtilities.DrawHistogram(vector, vector2,10, pictureBox1, pictureBox4);
+            ChartUtilities.DrawHistogram(vector, vector2, 40, pictureBox1, pictureBox4);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
